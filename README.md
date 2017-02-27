@@ -32,7 +32,22 @@ Profile, optimize, measure... and then lather, rinse, and repeat. Good luck!
 
 ####Part 2: Optimize Frames per Second in pizza.html
 
-To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js. 
+To optimize views/pizza.html, you will need to modify views/js/main.js until your frames per second rate is 60 fps or higher. You will find instructive comments in main.js.
+
+### How I optimized this site
+
+* Minified resources.
+* Used jquery selector - pulled in jquery and minified file.
+* Inlined styles and deferred non critical styling.
+* used async on scripts to prevent render blocking.
+* Optimized images.
+* Optimized for loops in js files.
+* Declared variables outside of for loops so they weren't being created each time the for loop was running.
+* added backface-visibility property to pizza background so that the individual pizzas would be on their own layers - preventing the whole view being rendered each time the pizzas moved position.
+* Added content attributes to resources so that the browser would know that certain resources are needed for certain conditions.
+* Added responsive meta tags so that the site would be better for mobile.
+
+
 
 You might find the FPS Counter/HUD Display useful in Chrome developer tools described here: [Chrome Dev Tools tips-and-tricks](https://developer.chrome.com/devtools/docs/tips-and-tricks).
 
