@@ -143,7 +143,22 @@
   </head>
 
   <body>
-    <link href="css/style.css" rel="stylesheet" defer>
+    <noscript id="deferred-styles">
+       <link rel="stylesheet" type="text/css" href="css/style.css"/>
+     </noscript>
+     <script>
+       var loadDeferredStyles = function() {
+         var addStylesNode = document.getElementById("deferred-styles");
+         var replacement = document.createElement("div");
+         replacement.innerHTML = addStylesNode.textContent;
+         document.body.appendChild(replacement)
+         addStylesNode.parentElement.removeChild(addStylesNode);
+       };
+       var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+           webkitRequestAnimationFrame || msRequestAnimationFrame;
+       if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+       else window.addEventListener('load', loadDeferredStyles);
+     </script>>
 
     <header>
       <a href="/"><img src="img/profilepic.jpg" alt="profile picture"></a>
@@ -188,6 +203,6 @@
       </footer>
     </div>
 
-    <script type="text/javascript" href="js/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
   </body>
 </html>
