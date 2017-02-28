@@ -235,7 +235,7 @@ var resizePizzas = function(size) {
     changeSliderLabel(size);
     // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
     function determineDx(size) {
-        var randomPizzas = $(".randomPizzaContainer");
+        var randomPizzas = document.getElementsByClassName("randomPizzaContainer");
         var pizzaLength = randomPizzas.length;
 
         // Changes the slider value to a percent width
@@ -273,10 +273,9 @@ var resizePizzas = function(size) {
 
 window.performance.mark("mark_start_generating");
 
-var pizzasDiv;
+var pizzasDiv = document.getElementById("randomPizzas");
 // This for-loop actually creates and appends all of the pizzas when the page loads
 for (var i = 2; i < 100; i++) {
-    pizzasDiv = document.getElementById("randomPizzas");
     pizzasDiv.append(pizzaElementGenerator(i));
 }
 
@@ -332,8 +331,8 @@ document.addEventListener("DOMContentLoaded", function() {
         elem = document.createElement("img");
         elem.className = "mover";
         elem.src = "images/pizza.png";
-        elem.style.height = "100px";
-        elem.style.width = "73.333px";
+        elem.style.height = "78px";
+        elem.style.width = "77px";
         elem.basicLeft = i % cols * s;
         elem.style.top = Math.floor(i / cols) * s + "px";
         $("#movingPizzas1").append(elem);
