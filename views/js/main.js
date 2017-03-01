@@ -217,15 +217,15 @@ var resizePizzas = function(size) {
     function changeSliderLabel(size) {
         switch (size) {
           case "1":
-            $("#pizzaSize").innerHTML = "Small";
+            document.getElementById("pizzaSize").innerHTML = "Small";
             return;
 
           case "2":
-            $("#pizzaSize").innerHTML = "Medium";
+            document.getElementById("pizzaSize").innerHTML = "Medium";
             return;
 
           case "3":
-            $("#pizzaSize").innerHTML = "Large";
+            document.getElementById("pizzaSize").innerHTML = "Large";
             return;
 
           default:
@@ -331,8 +331,8 @@ document.addEventListener("DOMContentLoaded", function() {
         elem = document.createElement("img");
         elem.className = "mover";
         elem.src = "images/pizza.png";
-        elem.style.height = "78px";
-        elem.style.width = "77px";
+        elem.style.height = "100px";
+        elem.style.width = "73.333px";
         elem.basicLeft = i % cols * s;
         elem.style.top = Math.floor(i / cols) * s + "px";
         $("#movingPizzas1").append(elem);

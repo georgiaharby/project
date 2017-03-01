@@ -46,6 +46,7 @@ To optimize views/pizza.html, you will need to modify views/js/main.js until you
 * added backface-visibility property to pizza background so that the individual pizzas would be on their own layers - preventing the whole view being rendered each time the pizzas moved position.
 * Added content attributes to resources so that the browser would know that certain resources are needed for certain conditions.
 * Added responsive meta tags so that the site would be better for mobile.
+* backface-visibility: hidden on moving pizzas.
 
 
 
