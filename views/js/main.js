@@ -326,8 +326,10 @@ document.addEventListener("DOMContentLoaded", function() {
     var height = window.screen.height;
     var cols = 8;
     var s = 256;
+    var row = height / s;
+    var num = row * cols;
     var elem;
-    for (var i = 0; i < height; i++) {
+    for (var i = 0; i < num; i++) {
         elem = document.createElement("img");
         elem.className = "mover";
         elem.src = "images/pizza.png";
